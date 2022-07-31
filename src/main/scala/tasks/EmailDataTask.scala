@@ -13,6 +13,6 @@ case class EmailDataTask(
   }
 
   override def result: String = {
-    s"${_obsfucate(name)}@$domain"
+    s"${_obsfucate(name)}@$domain".toLowerCase
   }
 }

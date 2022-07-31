@@ -31,6 +31,10 @@ class PersonalDataTaskSuite extends munit.FunSuite {
     assertEquals(PersonalDataTask.initialize("n@example.com").result, "n*****n@example.com")
   }
 
+  test("should return 'a*****n@example.com' on input 'ADMIN@example.com'") {
+    assertEquals(PersonalDataTask.initialize("ADMIN@example.com").result, "a*****n@example.com")
+  }
+
   test("should throw IllegalArgumentException when initialized with not email or phone") {
     interceptMessage[IllegalArgumentException]("Data is not a phone number or email.") {
       PersonalDataTask.initialize("John Doe")
